@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= metamagic :title => "Exceptional Supplies", :description => "Made Local, Made American",
+                :keywords => ['Made in America', 'Exceptional', 'Amazing Keywords'] %>
+  <%= favicon_link_tag "favicon.png", :type => "image/png" %> <!-- standard 32x32 png shortcut icon -->
+  <%= favicon_link_tag "favicon.png", :rel => "apple-touch-icon", :type => "image/png" %>  <!-- standard 32x32 png shortcut icon for apple-->
+  <!-- include a 16x16 ico in the root as well in case of IE6 -->
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= stylesheet_link_tag    'http://fonts.googleapis.com/css?family=Arvo|Open+Sans:400,300,600,700', :media => "screen" %>
+  <%= csrf_meta_tags %> <!-- hidden form elements to prevent cross-site scripting -->
+  <%= javascript_include_tag "application" %>
+</head>
+<body>
+  
+  <div id="menu-wrapper">
+    <div id="login">
+      log in
+    </div>
+    <div id="menu">
+      <ul>
+        <li><%= link_to "Buy", root_path %></li>
+        <li><%= link_to "Sell", contact_path %></li>
+        <li><%= link_to "Profile", photos_path %></li>
+        <li><%= link_to "Messages", photos_path %></li>
+        <li><%= link_to "Help", photos_path %></li>
+      </ul>
+    </div>
+  </div>
+
+  <%= yield %>
+    
+  <div id="footer">
+    <p>&copy; 2013 Stealthspliff.com. | Photos by Zandi, Gormally, and Risher.</p>
+  </div>
+
+</body>
+</html>
